@@ -13,7 +13,7 @@ void main()
     printf("please enter the second array rows and columns\n");
     scanf("%d %d", &brows, &bcolumns);
     CreateArray(b, brows, bcolumns);
-    Display(a, arows, acolumns);
+    Display(b, brows, bcolumns);
 
     Product(a, arows, acolumns, b, brows, bcolumns, c);
     printf("The product of the two arrays:\n");
@@ -31,12 +31,12 @@ void Product(int a[MAX][MAX], int ar, int ac, int b[MAX][MAX], int br, int bc, i
 {
     if(ac == br)
     {
-        c[ar][ac];
+        c[ar][bc];
         for(int i =0; i< ar; i++)
         {
-            for(int j =0; j<ac;j++)
+            for(int j =0; j<bc;j++)
             {
-                for(int k =0; k<br;k++)// k<ac
+                for(int k =0; k<bc;k++)// k<ar
                     c[i][j] += a[i][k] * b[k][j];
             }
         }
@@ -104,7 +104,7 @@ void Sum(int a[MAX][MAX], int b[MAX][MAX], int c[MAX][MAX], int rows, int column
 ---------------------------
 */
 
-void Sum(int a[MAX][MAX], int b[MAX][MAX], int c[MAX][MAX], int rows, int columns)
+void Differnce(int a[MAX][MAX], int b[MAX][MAX], int c[MAX][MAX], int rows, int columns)
 {
     for(int i =0; i<rows; i++)
     {
@@ -112,4 +112,8 @@ void Sum(int a[MAX][MAX], int b[MAX][MAX], int c[MAX][MAX], int rows, int column
             c[i][j] = a[i][j] - b[i][j];
     }
 }
+
+
+
+
 
