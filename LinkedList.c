@@ -53,6 +53,41 @@ void PrintLinkedList(LinkedList *plist)
 
 /*
 --------------------------
+-- Sort
+--------------------------
+*/
+
+void SelectionSortList(LinkedList *list)
+{
+    Node *ptrOuter = list->start;
+    Node *ptr = list->start;
+
+    while(ptrOuter != NULL)
+    {
+        ptr = ptrOuter;
+        int max = ptr->info;
+        Node* maxIndex = ptr;
+        while(ptr != NULL)
+        {
+            if(ptr->info > max)
+            {
+                max = ptr->info;
+                maxIndex = ptr;
+            }
+            else
+            {
+                ptr = ptr->next;
+            }
+        }
+        // to do: add at start
+        maxIndex->info = ptrOuter->info;
+        ptrOuter->info = max;
+        ptrOuter = ptrOuter->next;
+    }
+}
+
+/*
+--------------------------
 -- Insertion
 --------------------------
 */
