@@ -99,3 +99,26 @@ void InsertAfterPos(LinkedList *plist, int element, int value)
     }
 }
 
+void InsertBeforePos(LinkedList *plist, int element, int value)
+{
+    Node *pn = (Node*)malloc(sizeof(Node));
+    pn->info = element;
+    Node *ptr = plist->start;
+    Node *prev = plist->start;
+
+    while(ptr != NULL)
+    {
+        if(ptr->info == value)
+        {
+            pn->next = ptr;
+            prev->next = pn;
+            return;
+        }
+        else
+        {
+            prev = ptr;
+            ptr = ptr->next;
+        }
+    }
+}
+
