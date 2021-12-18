@@ -33,7 +33,7 @@ void CreateStack(Stack *ps)
 // Push element
 void Push(int e, Stack *ps)
 {
-    int *pn = (int*) malloc(sizeof(int));
+    StackNode *pn = (int*) malloc(sizeof(StackNode));
     pn->entry = e;
     pn->next = ps->top;
     ps->top = pn;
